@@ -1,0 +1,79 @@
+* {
+  font-family: 'Victor Mono', monospace;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#quote-machine {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#quote-box {
+  display: inline-block;
+  margin: 10px;
+  width: 500px;
+  --aug-border: 5px;
+  --aug-inset: 5px;
+  padding: 50px 50px 20px;; /* mind the gap */
+  text-align: center;
+  --aug-inset-bg: #7e9dcd;
+  --aug-bl: 25px;
+  --aug-r-width: 5%;
+  --aug-r-height: 25%;
+  --aug-border-bg: linear-gradient(to bottom right, rebeccapurple, dodgerblue, indigo);
+}
+
+#title {
+  color: rgb(51, 0, 87);
+  margin: 0 auto 20px;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+#text {
+  color: indigo;
+  width: 450px;
+  height: 300px;
+  margin: auto;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 28px;
+}
+
+#author {
+  color: white;
+  margin: 20px auto;
+  font-size: 16px;
+}
+
+div.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px; /* mind the gap */
+  text-align: center;
+  color: #1a254a;
+  cursor: pointer;
+
+  --aug-border: 2px;
+  --aug-inset: 5px;
+  --aug-border-bg: linear-gradient(to bottom right, rgb(33, 33, 218), dodgerblue);
+  --aug-inset-bg: rgba(255,255,255,.2);
+  
+  &:hover,
+  &:active {
+    color: navy;
+    --aug-inset-bg: rgba(255,255,255,.3);
+}
+}
