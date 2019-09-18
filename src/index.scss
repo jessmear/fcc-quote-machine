@@ -23,15 +23,17 @@ body {
 #quote-box {
   display: inline-block;
   margin: 10px;
-  width: 500px;
+  min-width: 400px;
   --aug-border: 5px;
   --aug-inset: 5px;
   padding: 50px 50px 20px;; /* mind the gap */
   text-align: center;
   --aug-inset-bg: #7e9dcd;
   --aug-bl: 25px;
-  --aug-r-width: 5%;
+  --aug-r-width: 20px;
   --aug-r-height: 25%;
+  // --aug-t-width: 20px;
+  // --aug-t-height: 25%;
   --aug-border-bg: linear-gradient(to bottom right, rebeccapurple, dodgerblue, indigo);
 }
 
@@ -39,17 +41,28 @@ body {
   color: rgb(51, 0, 87);
   margin: 0 auto 20px;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 24px;
 }
 
 #text {
   color: indigo;
-  width: 450px;
-  height: 300px;
   margin: auto;
-  font-weight: 700;
+  font-weight: 500;
   font-style: italic;
-  font-size: 28px;
+  font-size: 21px;
+  padding: 0 30px;
+  min-height: 100px;
+  
+  ul {
+    list-style-type: none;
+    text-align: left;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 8px;
+      line-height: 21px;
+    }
+  }
 }
 
 #author {
@@ -63,6 +76,7 @@ div.btn {
   margin: 10px;
   padding: 12px 24px; /* mind the gap */
   text-align: center;
+  font-size: 21px;
   color: #1a254a;
   cursor: pointer;
 
@@ -75,5 +89,9 @@ div.btn {
   &:active {
     color: navy;
     --aug-inset-bg: rgba(255,255,255,.3);
-}
+  }
+
+  a {
+    text-decoration: none;
+  }
 }

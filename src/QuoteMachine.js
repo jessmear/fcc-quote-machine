@@ -3,11 +3,16 @@ import React, { useState, useEffect } from 'react';
 
 function QuoteMachine() {
   const initialState = {
-    author: 'unknown',
-    title: 'unknown',
-    lines: []
+    author: 'loading...',
+    title: 'loading...',
+    lines: [],
+    tweetText: ''
   }
   const [state, setState] = useState(initialState);
+
+  useEffect( () => {
+    getPoetry();
+  }, []);
 
   const getPoetry = () => {
     const poemAPI = "http://poetrydb.org/linecount/4:abs";
@@ -21,8 +26,9 @@ function QuoteMachine() {
           console.log("Something went wrong. Please refresh the page and try again.")
           console.log(data.status)
           console.log(data.reason)
-        } else {
-          makePoem(data);
+        } else { // everything went right
+          const num = Math.floor(Math.random()*data.length);
+          makePoem(data[num]);
         }
       } else {
         // We reached our target server, but it returned an error
@@ -41,30 +47,44 @@ function QuoteMachine() {
   
   }
 
-  const makePoem = data => {
-    console.log(data[0])
+  const makePoem = poem => {
+    const lines = buildLines(poem.lines);
+    const tweetText = poem.title + ' by ' + poem.author + ' ' + poem.lines.join(" / ");
+    setState({
+      author: poem.author,
+      title: poem.title,
+      lines,
+      tweetText
+    })
   }
 
-  const poemAgain = () => {
-    getPoetry();
-  }
-
-  const tweetPoem = () => {
-	
+  const buildLines = (lines) => {
+    const verse = lines.map(line => {
+      return <li>{line}</li>
+    })
+    return(
+      <ul>
+        {verse}
+      </ul>
+    )
   }
 
   return (
     <div id="quote-machine">
       <div id="quote-box" augmented-ui="r-rect bl-rect exe">
-        <p id="title">random title</p>
-        <p id="text">random poem</p>
-        <p id="author">author name</p>
+        <p id="title">{state.title}</p>
+        <p id="author">by {state.author}</p>
+        <p id="text">{state.lines}</p>
         
-        <div className="btn" augmented-ui="tl-clip br-clip exe" onClick={poemAgain}>
+        <div className="btn" augmented-ui="tl-clip br-clip exe" onClick={getPoetry}>
           <span id="new-quote">poem again</span>
         </div>
-        <div className="btn" augmented-ui="tl-clip br-clip exe" onClick={tweetPoem}>
-          <span id="tweet-quote" >tweet</span>
+        <div className="btn" augmented-ui="tl-clip br-clip exe">
+          <a href={`http://twitter.com/intent/tweet?text=${state.tweetText}`}
+            target="_blank" 
+            id="tweet-quote">
+              tweet poem
+          </a>
         </div>
       </div>
     </div>
