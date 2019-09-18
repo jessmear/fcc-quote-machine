@@ -24,19 +24,19 @@ body {
   display: inline-block;
   margin: 10px;
   min-width: 400px;
-  // --aug-border: 5px;
-  // --aug-inset: 5px;
-  padding: 50px 50px 20px;; /* mind the gap */
+  --aug-border: 5px;
+  --aug-inset: 5px;
+  padding: 50px 50px 20px;
   text-align: center;
   background: #7e9dcd;
   border-radius: 7px;
-  // --aug-inset-bg: #7e9dcd;
-  // --aug-bl: 25px;
-  // --aug-r-width: 20px;
-  // --aug-r-height: 25%;
-  // --aug-t-width: 20px;
-  // --aug-t-height: 25%;
-  // --aug-border-bg: linear-gradient(to bottom right, rebeccapurple, dodgerblue, indigo);
+  --aug-inset-bg: #7e9dcd;
+  --aug-bl: 25px;
+  --aug-r-width: 20px;
+  --aug-r-height: 25%;
+  --aug-t-width: 20px;
+  --aug-t-height: 25%;
+  --aug-border-bg: linear-gradient(to bottom right, rebeccapurple, dodgerblue, indigo);
 }
 
 #title {
@@ -76,7 +76,7 @@ body {
 div.btn {
   display: inline-block;
   margin: 10px;
-  padding: 12px 24px; /* mind the gap */
+  padding: 12px 24px;
   text-align: center;
   font-size: 21px;
   color: #1a254a;
@@ -84,16 +84,16 @@ div.btn {
 
   border: navy 1px solid;
   border-radius: 5px;
-  // --aug-border: 2px;
-  // --aug-inset: 5px;
-  // --aug-border-bg: linear-gradient(to bottom right, rgb(33, 33, 218), dodgerblue);
-  // --aug-inset-bg: rgba(255,255,255,.2);
+  --aug-border: 2px;
+  --aug-inset: 5px;
+  --aug-border-bg: linear-gradient(to bottom right, rgb(33, 33, 218), dodgerblue);
+  --aug-inset-bg: rgba(255,255,255,.2);
   background: rgba(255,255,255,.5);
   &:hover,
   &:active {
     color: navy;
     background: rgba(255,255,255,.4);
-    // --aug-inset-bg: rgba(255,255,255,.3);
+    --aug-inset-bg: rgba(255,255,255,.3);
   }
 
   a {
@@ -103,7 +103,7 @@ div.btn {
     &:hover,
     &:active {
       color: navy;
-      // --aug-inset-bg: rgba(255,255,255,.3);
+      --aug-inset-bg: rgba(255,255,255,.3);
     }
   }
 }
