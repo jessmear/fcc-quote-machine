@@ -1,10 +1,9 @@
-TODO:
-Make readme better, linking to FCC Random Quote project
-Make RPM work on github pages
-Add (shortened?) link to page to the tweet
-Check that project passes FCC tests
-Refactor and clean up code, remove consoles where needed, etc
-
+TODO:<br>
+Make readme better, linking to FCC Random Quote project<br>
+Make RPM work on github pages<br>
+Add (shortened?) link to page to the tweet<br>
+Check that project passes FCC tests<br>
+Refactor and clean up code, remove consoles where needed, etc<br>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
