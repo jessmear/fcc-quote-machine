@@ -4,6 +4,7 @@ Make RPM work on github pages<br>
 Add (shortened?) link to page to the tweet<br>
 Check that project passes FCC tests<br>
 Refactor and clean up code, remove consoles where needed, etc<br>
+Possibly add functionality to randomize poem lines<br>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
