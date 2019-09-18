@@ -1,18 +1,21 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
+const littleWillie = (<ul>
+                        <li>Willie found some dynamite,</li>
+                        <li>Didn't understand it quite.</li>
+                        <li>Curiosity seldom pays,</li>
+                        <li>It rained Willie seven days.</li>
+                      </ul>);
 
 function QuoteMachine() {
   const initialState = {
-    author: 'loading...',
-    title: 'loading...',
-    lines: [],
+    author: 'unknown',
+    title: 'Little Willies',
+    lines: littleWillie,
     tweetText: ''
   }
   const [state, setState] = useState(initialState);
-
-  useEffect( () => {
-    getPoetry();
-  }, []);
 
   const getPoetry = () => {
     const poemAPI = "http://poetrydb.org/linecount/4:abs";
@@ -37,14 +40,11 @@ function QuoteMachine() {
         console.log(data.reason)
       }
     };
-
     request.onerror = function() {
       // There was a connection error of some sort
       console.log("Connection problem found, please refresh the page and try again.");
     };
-
     request.send();
-  
   }
 
   const makePoem = poem => {
