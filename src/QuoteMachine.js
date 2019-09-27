@@ -1,11 +1,10 @@
 
 import React, { useState } from 'react';
 
+const littleWillieText = ["Willie found some dynamite,", "Didn't understand it quite.", "Curiosity seldom pays,", "It rained Willie seven days."]
+
 const littleWillie = (<ul>
-                        <li>Willie found some dynamite,</li>
-                        <li>Didn't understand it quite.</li>
-                        <li>Curiosity seldom pays,</li>
-                        <li>It rained Willie seven days.</li>
+                        {littleWillieText.map((line) => { return <li>{line}</li> })}
                       </ul>);
 
 function QuoteMachine() {
@@ -13,7 +12,7 @@ function QuoteMachine() {
     author: 'unknown',
     title: 'Little Willies',
     lines: littleWillie,
-    tweetText: ''
+    tweetText: littleWillieText.join(' ') + ' - author unknown  https://jessmear.github.io/fcc-quote-machine/'
   }
   const [state, setState] = useState(initialState);
 
