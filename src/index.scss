@@ -48,7 +48,7 @@ body {
 
 #text {
   color: indigo;
-  margin: auto;
+  margin: 0 auto;
   font-weight: 500;
   font-style: italic;
   font-size: 21px;
@@ -88,16 +88,16 @@ div.btn {
   // --aug-inset: 5px;
   // --aug-border-bg: linear-gradient(to bottom right, rgb(33, 33, 218), dodgerblue);
   // --aug-inset-bg: rgba(255,255,255,.2);
-  background: rgba(255,255,255,.5);
+  background: rgba(255,255,255,.45);
   &:hover,
   &:active {
     color: navy;
-    background: rgba(255,255,255,.4);
+    background: rgba(255,255,255,.6);
     // --aug-inset-bg: rgba(255,255,255,.3);
   }
 
   a {
-    //background: rgba(255,255,255,.5);
+    // background: rgba(255,255,255,.5);
     color: #1a254a;
     text-decoration: none;
     &:hover,
